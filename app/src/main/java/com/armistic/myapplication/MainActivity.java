@@ -1,10 +1,18 @@
 package com.armistic.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+
+import com.armistic.myapplication.category.AsyncCategoryListActivity;
+import com.armistic.myapplication.select.Adapter;
+import com.armistic.myapplication.select.AsyncSelectActivity;
+import com.armistic.myapplication.select.Item;
 
 import java.util.ArrayList;
 
@@ -21,34 +29,47 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        items = new ArrayList<Item>();
+        final Button button = (Button) findViewById(R.id.button);
+        final Button button2 = (Button) findViewById(R.id.button2);
+        final Button button3 = (Button) findViewById(R.id.button3);
 
-        // populate the array items.
-        for (int i = 0; i < 1000; i++) {
-            items.add(new Item("Item " + i, false));
-        }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        listView = (ListView) findViewById(R.id.listView);
-
-        // seleccionamos el tipo de seleccion,.
-        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-
-
-        adapter = new Adapter(this, items);
-        listView.setAdapter(adapter);
-
-
-        if(listView.getChoiceMode() == ListView.CHOICE_MODE_SINGLE) {
-            listView.setItemChecked(0, true);
-        }
-
-        if(listView.getChoiceMode() == ListView.CHOICE_MODE_MULTIPLE) {
-            // set default items.
-            for (int i = 0; i < items.size(); i++) {
-                listView.setItemChecked(i, items.get(i).getChecked());
+                Intent intent = new Intent(MainActivity.this, AsyncCategoryListActivity.class);
+                intent.putExtra("loadUrl", "category.json");
+                startActivity(intent);
             }
-        }
+        });
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, AsyncSelectActivity.class);
+
+                intent.putExtra("loadUrl", "select_single.json");
+                intent.putExtra("choiceMode", ListView.CHOICE_MODE_SINGLE);
+                intent.putExtra("key", "KEY");
+
+                startActivity(intent);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, AsyncSelectActivity.class);
+
+                intent.putExtra("loadUrl", "select_multiple.json");
+                intent.putExtra("choiceMode", ListView.CHOICE_MODE_MULTIPLE);
+                intent.putExtra("key", "KEY");
+
+                startActivity(intent);
+            }
+        });
 
     }
 

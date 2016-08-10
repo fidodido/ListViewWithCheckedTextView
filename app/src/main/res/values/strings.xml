@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="action_settings">Settings</string>
+
+
+    <!-- Activity Async Category -->
+    <string name="category_title">Unknow Category</string>
+    <string name="category_selected">Unknow Selected</string>
 </resources>

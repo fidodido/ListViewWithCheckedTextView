@@ -1,22 +1,14 @@
-package com.armistic.myapplication;
+package com.armistic.myapplication.select;
 
 import android.content.Context;
-import android.support.v4.view.AsyncLayoutInflater;
-import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.CheckedTextView;
-import android.widget.CompoundButton;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.armistic.myapplication.R;
+
 import java.util.List;
 
 /**
@@ -55,7 +47,7 @@ public class Adapter extends BaseAdapter {
         if (convertView == null) {
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_async_select_item, parent, false);
         }
 
         CheckedTextView checkedTextView = (CheckedTextView) convertView.findViewById(R.id.checkedTextView1);
