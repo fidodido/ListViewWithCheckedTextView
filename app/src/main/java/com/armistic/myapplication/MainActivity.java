@@ -25,18 +25,30 @@ public class MainActivity extends AppCompatActivity {
 
         // populate the array items.
         for (int i = 0; i < 1000; i++) {
-            items.add(new Item("Item " + i, true));
+            items.add(new Item("Item " + i, false));
         }
 
         listView = (ListView) findViewById(R.id.listView);
 
+        // seleccionamos el tipo de seleccion,.
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+
         adapter = new Adapter(this, items);
         listView.setAdapter(adapter);
 
-        // set default items.
-        for (int i = 0; i < items.size(); i++) {
-            listView.setItemChecked(i, items.get(i).getChecked());
+
+        if(listView.getChoiceMode() == ListView.CHOICE_MODE_SINGLE) {
+            listView.setItemChecked(0, true);
         }
+
+        if(listView.getChoiceMode() == ListView.CHOICE_MODE_MULTIPLE) {
+            // set default items.
+            for (int i = 0; i < items.size(); i++) {
+                listView.setItemChecked(i, items.get(i).getChecked());
+            }
+        }
+
 
     }
 

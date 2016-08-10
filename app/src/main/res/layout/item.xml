@@ -10,5 +10,4 @@
     android:checkMark="@drawable/checkmark"
     android:checkMarkTint="@color/colorAccent"
     android:text="no-text"
-    android:gravity="center_vertical"
-    android:checked="true"/>
+    android:gravity="center_vertical" />
