@@ -53,7 +53,7 @@ public class AsyncSelectActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         fetchJson();
-        
+
     }
 
     private void fetchJson() {

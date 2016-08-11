@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/idTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+    </LinearLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/profile"
+        android:layout_marginTop="10dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#ffffff" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_photo_camera_white_24dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idTopBar"
+        android:layout_marginTop="50dp"
+        android:padding="20dp">
+
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/profileIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="{fa-list-alt}"
+            android:textColor="@color/colorGreen"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daniela Castillo"
+            android:layout_toRightOf="@+id/profileIcon"
+            android:layout_marginLeft="20dp"
+            android:textSize="17dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/profileName"
+            android:layout_toRightOf="@+id/profileIcon"
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorCyan"/>
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/quoteIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="{fa-quote-left}"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/colorGreen"
+            android:layout_below="@id/profileIcon"
+            android:textSize="17dp" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/quoteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I am Daniela Castillo, i am musican and i like the fruits, gold and yogurt, but i hate the fucking shit of all the world jhahahaha"
+            android:layout_toRightOf="@+id/profileIcon"
+            android:layout_below="@id/profileIcon"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:textSize="15dp" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/quoteEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit {fa-pencil-square-o}"
+            android:layout_toRightOf="@+id/profileIcon"
+            android:layout_below="@id/quoteText"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorGreen"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.armistic.myapplication.category.AsyncCategoryListActivity;
+import com.armistic.myapplication.profile.ProfileActivity;
 import com.armistic.myapplication.select.Adapter;
 import com.armistic.myapplication.select.AsyncSelectActivity;
 import com.armistic.myapplication.select.Item;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button);
         final Button button2 = (Button) findViewById(R.id.button2);
         final Button button3 = (Button) findViewById(R.id.button3);
+        final Button button4 = (Button) findViewById(R.id.button4);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("choiceMode", ListView.CHOICE_MODE_MULTIPLE);
                 intent.putExtra("key", "KEY");
 
+                startActivity(intent);
+            }
+        });
+
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
