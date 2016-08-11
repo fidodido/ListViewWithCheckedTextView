@@ -21,11 +21,14 @@
         android:layout_marginRight="40dp"
         android:layout_alignParentRight="true" />
 
-    <ImageView
+    <com.joanzapata.iconify.widget.IconTextView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/ic_mode_edit_black_24dp"
-        android:tint="@color/colorPrimary"
-        android:layout_alignParentRight="true"/>
+        android:text="{fa-pencil}"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentRight="true"
+        android:textSize="15dp" />
+
 </RelativeLayout>

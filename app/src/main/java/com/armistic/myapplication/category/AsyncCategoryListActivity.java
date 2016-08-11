@@ -9,6 +9,8 @@ import android.widget.ProgressBar;
 
 import com.armistic.myapplication.Persistence;
 import com.armistic.myapplication.R;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -33,6 +35,7 @@ public class AsyncCategoryListActivity  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Iconify.with(new FontAwesomeModule());
         setContentView(R.layout.activity_async_category_list);
 
         // Obtenemos la URL de donde cargamos las categorias.
