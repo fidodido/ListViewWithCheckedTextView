@@ -2,7 +2,10 @@ package com.armistic.myapplication.myphotos;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.armistic.myapplication.R;
 import com.joanzapata.iconify.Iconify;
@@ -18,6 +21,7 @@ public class MyPhotosActivity extends AppCompatActivity {
     private ArrayList<Photo> items;
     private Adapter adapter;
     private GridView gridView;
+    private ImageView photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ public class MyPhotosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Iconify.with(new FontAwesomeModule());
         setContentView(R.layout.activity_my_photos);
+
 
         items = new ArrayList<Photo>();
 

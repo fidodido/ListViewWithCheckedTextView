@@ -1,11 +1,17 @@
 package com.armistic.myapplication.myphotos;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.armistic.myapplication.R;
 import com.armistic.myapplication.category.Category;
@@ -41,19 +47,21 @@ public class Adapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        TextView category;
+        ImageView photo;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.activity_my_photos_item, parent, false);
 
             viewHolder = new ViewHolder();
+
+            viewHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
 
             convertView.setTag(viewHolder);
 
@@ -62,6 +70,23 @@ public class Adapter extends BaseAdapter {
         }
 
         Photo item = this.items.get(position);
+
+        viewHolder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final Dialog dialog = new Dialog(view.getContext());
+
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);c
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSlide;
+                dialog.setContentView(R.layout.activity_my_photos_dialog);
+                ImageView image = (ImageView) dialog.findViewById(R.id.my_image);
+                image.setImageResource(R.drawable.profile);
+
+                dialog.show();
+
+            }
+        });
 
 
         return convertView;
