@@ -77,8 +77,8 @@ public class Adapter extends BaseAdapter {
 
                 final Dialog dialog = new Dialog(view.getContext());
 
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);c
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSlide;
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
                 dialog.setContentView(R.layout.activity_my_photos_dialog);
                 ImageView image = (ImageView) dialog.findViewById(R.id.my_image);
                 image.setImageResource(R.drawable.profile);
