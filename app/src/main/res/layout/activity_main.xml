@@ -32,4 +32,10 @@
         android:layout_height="wrap_content"
         android:text="Profile"
         android:id="@+id/button4" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My photos"
+        android:id="@+id/button5" />
 </LinearLayout>

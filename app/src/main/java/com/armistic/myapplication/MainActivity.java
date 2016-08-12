@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.armistic.myapplication.category.AsyncCategoryListActivity;
+import com.armistic.myapplication.myphotos.MyPhotosActivity;
 import com.armistic.myapplication.profile.ProfileActivity;
 import com.armistic.myapplication.select.Adapter;
 import com.armistic.myapplication.select.AsyncSelectActivity;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button2 = (Button) findViewById(R.id.button2);
         final Button button3 = (Button) findViewById(R.id.button3);
         final Button button4 = (Button) findViewById(R.id.button4);
+        final Button button5 = (Button) findViewById(R.id.button5);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, MyPhotosActivity.class);
                 startActivity(intent);
             }
         });
